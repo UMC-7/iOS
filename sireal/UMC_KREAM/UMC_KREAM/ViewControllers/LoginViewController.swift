@@ -15,7 +15,6 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // showLoginView()
         self.view = loginView
     }
 
@@ -24,13 +23,6 @@ class LoginViewController: UIViewController {
         view.backgroundColor = .white
         return view
     }()
-    
-    private func showLoginView() {
-        view.addSubview(loginView)
-        loginView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
         
-    }
 }
 

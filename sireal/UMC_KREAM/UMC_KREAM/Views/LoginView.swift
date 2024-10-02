@@ -117,14 +117,26 @@ class LoginView: UIView {
         return btn
     }()
     
-    // 카카오 & 로그인 버튼
-    private let loginButtonView: UIImageView = {
-        let buttonView = UIImageView()
-        buttonView.image = UIImage(named: "LoginButton")
-        return buttonView
+    // 카카오 로그인 버튼
+    private let kakaoLoginBtn: UIButton = {
+        let btn = UIButton()
+        btn.setImage(UIImage(named: "kakaologin"), for: .normal)
+        btn.imageView?.contentMode = .scaleAspectFit
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        return btn
+    }()
+
+    // 애플 로그인 버튼
+    private let appleLoginBtn: UIButton = {
+        let btn = UIButton()
+        btn.setImage(UIImage(named: "applelogin"), for: .normal)
+        btn.imageView?.contentMode = .scaleAspectFit
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        return btn
     }()
     
     
+    // MARK: - Function
     
     private func subviews() {
         // 아이디 스택뷰
@@ -142,7 +154,8 @@ class LoginView: UIView {
         
         addSubview(headerLogoView)
         addSubview(loginBtn)
-        addSubview(loginButtonView)
+        addSubview(kakaoLoginBtn)
+        addSubview(appleLoginBtn)
 
     }
 
@@ -173,12 +186,18 @@ class LoginView: UIView {
             $0.height.equalTo(38)
         }
         
-        loginButtonView.snp.makeConstraints{
+        kakaoLoginBtn.snp.makeConstraints {
             $0.top.equalTo(loginBtn.snp.bottom).offset(87)
             $0.left.equalToSuperview().offset(47.5)
             $0.right.equalToSuperview().offset(-47.5)
-            $0.width.equalTo(298)
-            $0.height.equalTo(102)
+            $0.height.equalTo(40)
+        }
+        
+        appleLoginBtn.snp.makeConstraints {
+            $0.top.equalTo(kakaoLoginBtn.snp.bottom).offset(22)
+            $0.left.equalToSuperview().offset(47.5)
+            $0.right.equalToSuperview().offset(-47.5)
+            $0.height.equalTo(40)
         }
     }
 }
