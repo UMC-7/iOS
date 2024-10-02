@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  1st_Week
+//  Kream
 //
-//  Created by 이은찬 on 9/30/24.
+//  Created by 이은찬 on 10/2/24.
 //
 
 import UIKit

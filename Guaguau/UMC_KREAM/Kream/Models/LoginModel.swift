@@ -8,7 +8,6 @@
 import Foundation
 
 struct LoginModel{
-    var ID: String = ""
-    
-    var PW: String = ""
+    var id: String = ""
+    var pw: String = ""
 }
