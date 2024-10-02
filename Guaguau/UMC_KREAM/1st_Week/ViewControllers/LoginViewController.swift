@@ -15,6 +15,11 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
+        // TODO: 여기 고쳐주세용
+        
+        
         // view에 loginView 추가
         view.addSubview(loginView)
 

@@ -11,6 +11,8 @@ import UIKit
 import SnapKit
 
 class LoginView: UIView {
+    
+    // MARK: - 초기화 구문
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -21,6 +23,8 @@ class LoginView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Property
+
     
     let KreamImageView: UIImageView = {
         let imageView = UIImageView()
@@ -39,7 +43,11 @@ class LoginView: UIView {
     
     let emailTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "  예)Kream@kream.co.kr"
+        
+        textField.leftViewMode = .always
+        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: 1))
+        
+        textField.placeholder = "예)Kream@kream.co.kr"
         textField.borderStyle = .none  // borderStyle을 none으로 설정해야 커스텀 스타일을 적용할 수 있습니다
         textField.layer.cornerRadius = 15  // 둥글게 만드는 속성
         textField.layer.borderWidth = 1    // 테두리 두께
@@ -58,7 +66,11 @@ class LoginView: UIView {
     
     let passwordTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "  비밀번호를 입력해주세요"
+        
+        textField.leftViewMode = .always
+        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: 1))
+        
+        textField.placeholder = "비밀번호를 입력해주세요"
         textField.borderStyle = .none  // borderStyle을 none으로 설정해야 커스텀 스타일을 적용할 수 있습니다
         textField.layer.cornerRadius = 15  // 둥글게 만드는 속성
         textField.layer.borderWidth = 1    // 테두리 두께
@@ -108,6 +120,7 @@ class LoginView: UIView {
     }()
     
     
+    /// 오토레이아웃 설정입니다,
     public func addComponents() {
         self.addSubview(KreamImageView)
         self.addSubview(emailLabel)
@@ -147,7 +160,7 @@ class LoginView: UIView {
         
         passwordLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(362)
-            //$0.bottom.equalToSuperview().offset(-475)    //왜 이거 지우니까 됨?
+            //$0.bottom.equalToSuperview().offset(-475)    //왜 이거 지우니까 됨??
             $0.centerX.equalToSuperview()
             $0.width.equalTo(303)
             $0.height.equalTo(15)
