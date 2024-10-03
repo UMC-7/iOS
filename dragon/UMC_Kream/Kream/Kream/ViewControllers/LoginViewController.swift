@@ -16,6 +16,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view = LoginView(frame: self.view.bounds)
+        
         loginView = LoginView()
         self.view.addSubview(loginView)
         
@@ -27,8 +29,8 @@ class LoginViewController: UIViewController {
     }
     
     @objc func loginButtonTapped() {
-        loginModel.id = loginView.IDTextField.text ?? ""
-        loginModel.password = loginView.PWTextField.text ?? ""
+        loginModel.id = loginView.idTextField.text ?? ""
+        loginModel.password = loginView.pwTextField.text ?? ""
         
         if loginModel.isValid() {
             print("로그인 성공")
