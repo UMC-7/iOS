@@ -15,22 +15,21 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // showLoginView()
         self.view = loginView
     }
 
     private lazy var loginView: LoginView = {
         let view = LoginView()
+        view.loginBtn.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         view.backgroundColor = .white
         return view
     }()
     
-    private func showLoginView() {
-        view.addSubview(loginView)
-        loginView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
-        
+    // 로그인 버튼 이벤트
+    @objc func loginButtonTapped() {
+        let tabBarController = MainTabBarController()
+        tabBarController.modalPresentationStyle = .fullScreen
+        present(tabBarController, animated: true, completion: nil)
     }
 }
 
