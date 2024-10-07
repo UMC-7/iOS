@@ -19,6 +19,7 @@ class ProfileEditViewController: UIViewController {
             return view
         }()
         
+    
     // MARK: - Function
     
         override func viewDidLoad() {
@@ -35,14 +36,11 @@ class ProfileEditViewController: UIViewController {
             profileEditView.passwordEditButton.addTarget(self, action: #selector(passwordEditButtonTapped), for: .touchUpInside)
         }
 
-    
         // 뒤로 가기 버튼 이벤트
         @objc private func backButtonTapped() {
-            
             navigationController?.popViewController(animated: true)
         }
         
-    
         // 이메일 편집 버튼 이벤트
         @objc private func emailEditButtonTapped() {
             if isEditingEmail {

@@ -49,4 +49,9 @@ class MyPageViewController: UIViewController {
     @objc private func shareProfileTapped() {
     
     }
+    
+    // 뒤로 가기 버튼 이벤트
+    @objc private func backButtonTapped() {
+        navigationController?.popViewController(animated: true)
+    }
 }

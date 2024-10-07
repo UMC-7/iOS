@@ -122,12 +122,13 @@ class ProfileEditView: UIView {
         addSubview(passwordTextField)
         addSubview(passwordEditButton)
         
+        
         // SnapKit으로 레이아웃 설정
         
         backButton.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(66)  // 상단에서 20pt 간격
-            make.left.equalToSuperview().offset(27) // 왼쪽에서 20pt 간격
-            make.width.height.equalTo(25)           // 가로, 세로 크기 44pt
+            make.top.equalToSuperview().offset(66)
+            make.left.equalToSuperview().offset(27)
+            make.width.height.equalTo(25)
         }
         
         
