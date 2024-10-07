@@ -11,24 +11,22 @@ class LoginViewController: UIViewController {
     
     //LoginModel 인스턴스 설정
     var loginModel = LoginModel(id: "abcd", password: "1234")
-    var loginView: LoginView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        loginView = LoginView()
-        self.view.addSubview(loginView)
-        
-        loginView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
-        
-        loginView.loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        self.view = loginView
     }
     
+    private lazy var loginView: LoginView = {
+        //함수 부분
+        let view = LoginView()
+        view.loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        return view
+    }()
+    
     @objc func loginButtonTapped() {
-        loginModel.id = loginView.IDTextField.text ?? ""
-        loginModel.password = loginView.PWTextField.text ?? ""
+        loginModel.id = loginView.idTextField.text ?? ""
+        loginModel.password = loginView.pwTextField.text ?? ""
         
         if loginModel.isValid() {
             print("로그인 성공")
