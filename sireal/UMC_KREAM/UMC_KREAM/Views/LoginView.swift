@@ -3,7 +3,7 @@ import SnapKit
 
 class LoginView: UIView {
 
-    // MARK: - 초기화 구문
+    // MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
         subviews()
@@ -107,7 +107,7 @@ class LoginView: UIView {
     
     
     // 로그인 버튼
-    private let loginBtn: UIButton = {
+    public let loginBtn: UIButton = {
         let btn = UIButton()
         var configuration = UIButton.Configuration.plain()
         configuration.title = "로그인"
