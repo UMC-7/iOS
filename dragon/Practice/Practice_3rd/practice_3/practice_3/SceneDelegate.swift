@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  Kream
+//  practice_3
 //
-//  Created by 권용빈 on 10/1/24.
+//  Created by 권용빈 on 10/8/24.
 //
 
 import UIKit
@@ -16,18 +16,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
                window = UIWindow(frame: windowScene.coordinateSpace.bounds)
                window?.windowScene = windowScene
-        window?.rootViewController = MainTabBarController() // 원하는 뷰 컨트롤러 파일의 이름을 작성하면 됩니다.
+               window?.rootViewController = ViewController() // 원하는 뷰 컨트롤러 파일의 이름을 작성하면 됩니다.
                window?.makeKeyAndVisible()
     }
-    
-    func changeRootViewController(_ viewController: UIViewController, animated: Bool = true) {
-            guard let window = self.window else { return }
-            window.rootViewController = viewController
-            // 애니메이션 적용
-            if animated {
-                UIView.transition(with: window, duration: 0.5, options: .transitionFlipFromRight, animations: nil, completion: nil)
-            }
-        }
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
@@ -56,9 +47,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-    
-    
-    
+
 
 }
 
