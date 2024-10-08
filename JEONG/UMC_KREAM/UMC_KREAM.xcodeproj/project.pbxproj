@@ -3,34 +3,37 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48B730452CB4E602001BDB6E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 48B730442CB4E602001BDB6E /* SnapKit */; };
 		48CCAF5D2CA1359B00C9ACD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CCAF5C2CA1359B00C9ACD2 /* AppDelegate.swift */; };
 		48CCAF5F2CA1359B00C9ACD2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CCAF5E2CA1359B00C9ACD2 /* SceneDelegate.swift */; };
-		48CCAF612CA1359B00C9ACD2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CCAF602CA1359B00C9ACD2 /* ViewController.swift */; };
-		48CCAF642CA1359B00C9ACD2 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 48CCAF632CA1359B00C9ACD2 /* Base */; };
 		48CCAF662CA1359C00C9ACD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48CCAF652CA1359C00C9ACD2 /* Assets.xcassets */; };
-		48CCAF692CA1359C00C9ACD2 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 48CCAF682CA1359C00C9ACD2 /* Base */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		48CCAF592CA1359B00C9ACD2 /* UMC_KREAM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UMC_KREAM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48CCAF5C2CA1359B00C9ACD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48CCAF5E2CA1359B00C9ACD2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		48CCAF602CA1359B00C9ACD2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		48CCAF632CA1359B00C9ACD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		48CCAF652CA1359C00C9ACD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		48CCAF682CA1359C00C9ACD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48CCAF6A2CA1359C00C9ACD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		48B730362CB4E3EB001BDB6E /* ViewControllers */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ViewControllers; sourceTree = "<group>"; };
+		48B730372CB4E3F1001BDB6E /* Views */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Views; sourceTree = "<group>"; };
+		48B730382CB4E3F4001BDB6E /* Models */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Models; sourceTree = "<group>"; };
+		48CB274F2CB51CE3004C8497 /* Components */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Components; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		48CCAF562CA1359B00C9ACD2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48B730452CB4E602001BDB6E /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +59,13 @@
 		48CCAF5B2CA1359B00C9ACD2 /* UMC_KREAM */ = {
 			isa = PBXGroup;
 			children = (
+				48CB274F2CB51CE3004C8497 /* Components */,
+				48B730382CB4E3F4001BDB6E /* Models */,
+				48B730372CB4E3F1001BDB6E /* Views */,
+				48B730362CB4E3EB001BDB6E /* ViewControllers */,
 				48CCAF5C2CA1359B00C9ACD2 /* AppDelegate.swift */,
 				48CCAF5E2CA1359B00C9ACD2 /* SceneDelegate.swift */,
-				48CCAF602CA1359B00C9ACD2 /* ViewController.swift */,
-				48CCAF622CA1359B00C9ACD2 /* Main.storyboard */,
 				48CCAF652CA1359C00C9ACD2 /* Assets.xcassets */,
-				48CCAF672CA1359C00C9ACD2 /* LaunchScreen.storyboard */,
 				48CCAF6A2CA1359C00C9ACD2 /* Info.plist */,
 			);
 			path = UMC_KREAM;
@@ -81,6 +85,12 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				48B730362CB4E3EB001BDB6E /* ViewControllers */,
+				48B730372CB4E3F1001BDB6E /* Views */,
+				48B730382CB4E3F4001BDB6E /* Models */,
+				48CB274F2CB51CE3004C8497 /* Components */,
 			);
 			name = UMC_KREAM;
 			productName = UMC_KREAM;
@@ -111,6 +121,9 @@
 				Base,
 			);
 			mainGroup = 48CCAF502CA1359B00C9ACD2;
+			packageReferences = (
+				48B730432CB4E602001BDB6E /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 48CCAF5A2CA1359B00C9ACD2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,8 +139,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				48CCAF662CA1359C00C9ACD2 /* Assets.xcassets in Resources */,
-				48CCAF692CA1359C00C9ACD2 /* Base in Resources */,
-				48CCAF642CA1359B00C9ACD2 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,32 +149,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48CCAF612CA1359B00C9ACD2 /* ViewController.swift in Sources */,
 				48CCAF5D2CA1359B00C9ACD2 /* AppDelegate.swift in Sources */,
 				48CCAF5F2CA1359B00C9ACD2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		48CCAF622CA1359B00C9ACD2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				48CCAF632CA1359B00C9ACD2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		48CCAF672CA1359C00C9ACD2 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				48CCAF682CA1359C00C9ACD2 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		48CCAF6B2CA1359C00C9ACD2 /* Debug */ = {
@@ -296,7 +287,6 @@
 				INFOPLIST_FILE = UMC_KREAM/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -323,7 +313,6 @@
 				INFOPLIST_FILE = UMC_KREAM/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -361,6 +350,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		48B730432CB4E602001BDB6E /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		48B730442CB4E602001BDB6E /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 48B730432CB4E602001BDB6E /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 48CCAF512CA1359B00C9ACD2 /* Project object */;
 }
