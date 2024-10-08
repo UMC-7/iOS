@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  Kream
+//  UserDefaults
 //
-//  Created by 이은찬 on 10/2/24.
+//  Created by 이은찬 on 10/8/24.
 //
 
 import UIKit
@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
                window = UIWindow(frame: windowScene.coordinateSpace.bounds)
                window?.windowScene = windowScene
-               window?.rootViewController = BaseViewController() // 원하는 뷰 컨트롤러 파일의 이름을 작성하면 됩니다.
+               window?.rootViewController = ViewController() // 원하는 뷰 컨트롤러 파일의 이름을 작성하면 됩니다.
                window?.makeKeyAndVisible()
     }
 
