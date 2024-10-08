@@ -24,6 +24,7 @@ class ProfileEditView: UIView {
 
     // MARK: - Properties
     
+    // 프로필 이미지
     public let profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "profile")
@@ -32,11 +33,6 @@ class ProfileEditView: UIView {
         return imageView
     }()
     
-    public let backButton: UIButton = {
-        let button = UIButton(type: .custom)
-        button.setImage(UIImage(named: "back"), for: .normal)
-        return button
-    }()
     
     public let titleLabel: UILabel = {
         let label = UILabel()
@@ -112,7 +108,7 @@ class ProfileEditView: UIView {
     
     private func setupLayout() {
         addSubview(profileImageView)
-        addSubview(backButton)
+        //addSubview(backButton)
         addSubview(titleLabel)
         addSubview(subTitleLabel)
         addSubview(userEmailLabel)
@@ -123,14 +119,7 @@ class ProfileEditView: UIView {
         addSubview(passwordEditButton)
         
         
-        // SnapKit으로 레이아웃 설정
-        
-        backButton.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(66)
-            make.left.equalToSuperview().offset(27)
-            make.width.height.equalTo(25)
-        }
-        
+         // SnapKit으로 레이아웃 설정
         
         titleLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(66)

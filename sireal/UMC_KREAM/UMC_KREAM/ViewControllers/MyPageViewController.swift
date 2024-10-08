@@ -19,6 +19,13 @@ class MyPageViewController: UIViewController {
         super.viewDidLoad()
         self.view = myPageView
         setupActions()
+        
+        // 뒤로가기 버튼
+        let profileEditVC = ProfileEditViewController()
+        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+            backBarButtonItem.tintColor = .black
+            self.navigationItem.backBarButtonItem = backBarButtonItem
+            self.navigationController?.pushViewController(profileEditVC, animated: true)
     }
     
     private func setupActions() {
@@ -28,7 +35,6 @@ class MyPageViewController: UIViewController {
         myPageView.shareProfileButton.addTarget(self, action: #selector(shareProfileTapped), for: .touchUpInside)
     }
 
-    
     // 설정 버튼 이벤트
     @objc private func settingsTapped() {
     

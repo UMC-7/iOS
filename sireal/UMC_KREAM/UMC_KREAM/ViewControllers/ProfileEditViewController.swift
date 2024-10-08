@@ -12,8 +12,8 @@ class ProfileEditViewController: UIViewController {
     
         var isEditingEmail = false
         var isEditingPassword = false
-    
 
+    
         private lazy var profileEditView: ProfileEditView = {
             let view = ProfileEditView()
             return view
@@ -26,20 +26,17 @@ class ProfileEditViewController: UIViewController {
             super.viewDidLoad()
             self.view = profileEditView
             
+            // 뒤로가기 버튼 보이기
+            navigationItem.hidesBackButton = false
             setupActions()
-            navigationItem.hidesBackButton = true
+            
         }
         
         private func setupActions() {
-            profileEditView.backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
             profileEditView.emailEditButton.addTarget(self, action: #selector(emailEditButtonTapped), for: .touchUpInside)
             profileEditView.passwordEditButton.addTarget(self, action: #selector(passwordEditButtonTapped), for: .touchUpInside)
         }
 
-        // 뒤로 가기 버튼 이벤트
-        @objc private func backButtonTapped() {
-            navigationController?.popViewController(animated: true)
-        }
         
         // 이메일 편집 버튼 이벤트
         @objc private func emailEditButtonTapped() {

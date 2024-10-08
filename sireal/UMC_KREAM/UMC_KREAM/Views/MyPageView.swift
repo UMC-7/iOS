@@ -61,6 +61,8 @@ class MyPageView: UIView {
         return button
     }()
     
+    
+    
     // MARK: - Initializer
     
     override init(frame: CGRect) {
