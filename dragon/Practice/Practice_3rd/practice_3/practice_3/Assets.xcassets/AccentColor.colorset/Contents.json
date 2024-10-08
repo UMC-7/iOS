@@ -1,7 +1,6 @@
 {
-  "images" : [
+  "colors" : [
     {
-      "filename" : "myLogo.pdf",
       "idiom" : "universal"
     }
   ],

@@ -30,10 +30,17 @@ class LoginViewController: UIViewController {
         
         if loginModel.isValid() {
             print("로그인 성공")
+            goToMainTabBar()
         }else {
             print(" 아이디 또는 비밀번호가 유효하지 않습니다.")
         }
     }
-
+    
+    private func goToMainTabBar() {
+        let mainTabBarController = MainTabBarController()
+        if let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
+            sceneDelegate.changeRootViewController(mainTabBarController)
+        }
+    }
 }
 
