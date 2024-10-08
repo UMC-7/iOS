@@ -30,16 +30,16 @@ class LoginView: UIView {
     
     private lazy var kreamImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "KreamLogo.png")
+        imageView.image = UIImage(named: "KreamLogo")
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
-    private lazy var emailLabel: UILabel = textFiledTitle(text: "이메일 주소를 입력해주세요")
-    private lazy var passwordLabel: UILabel = textFiledTitle(text: "비밀번호를 입력해주세요")
+    private lazy var emailLabel: UILabel = textFiledTitle(text: "이메일 주소")
+    private lazy var passwordLabel: UILabel = textFiledTitle(text: "비밀번호")
     
     public lazy var emailTextField: UITextField = textField(text: "예)Kream@kream.co.kr")
-    public lazy var passwordTextField: UITextField = textField(text: "비밀번호를 입력하세요")
+    public lazy var passwordTextField: UITextField = textField(text: "비밀번호를 입력해주세요")
     
     public lazy var loginButton: UIButton = {
         let button = UIButton()
@@ -55,7 +55,10 @@ class LoginView: UIView {
         let button = UIButton(type: .system)  //단순히 버튼결과 담당
         var configuration = UIButton.Configuration.plain() //버튼 꾸밈 담당
         
-        configuration.image = UIImage(systemName: "applelogo")?.withRenderingMode(.alwaysOriginal).withTintColor(.black)
+        //configuration.image = UIImage(systemName: "applelogo")?.withRenderingMode(.alwaysOriginal).withTintColor(.black)
+        
+        configuration.image = UIImage(named: "KakaoLogo")?.withRenderingMode(.alwaysOriginal)
+        
         configuration.attributedTitle = AttributedString("카카오로 로그인", attributes: AttributeContainer([.font: UIFont.systemFont(ofSize: 13, weight: .bold), .foregroundColor: UIColor.black]))
         configuration.imagePlacement = .leading     // NSDirectionalRectEdge.leading (직접참조)
         configuration.imagePadding = 69
@@ -70,19 +73,25 @@ class LoginView: UIView {
         return button
     }()
     
-    let appleLoginButton: UIButton = {
-        let button = UIButton(type: .system)
+    public lazy var appleLoginButton: UIButton = {
+        /* 단일 책임 원칙 SRP */
+        let button = UIButton(type: .system)  //단순히 버튼결과 담당
+        var configuration = UIButton.Configuration.plain() //버튼 꾸밈 담당
         
-        button.setImage(UIImage(systemName: "applelogo"), for: .normal)  // 애플 로고 추가
+        //configuration.image = UIImage(systemName: "applelogo")?.withRenderingMode(.alwaysOriginal).withTintColor(.black)
         
-        button.setTitle("Apple로 로그인", for: .normal)
+        configuration.image = UIImage(named: "AppleLogo")?.withRenderingMode(.alwaysOriginal)
+        
+        configuration.attributedTitle = AttributedString("Apple로 로그인", attributes: AttributeContainer([.font: UIFont.systemFont(ofSize: 13, weight: .bold), .foregroundColor: UIColor.black]))
+        configuration.imagePlacement = .leading     // NSDirectionalRectEdge.leading (직접참조)
+        configuration.imagePadding = 69
+        configuration.contentInsets = NSDirectionalEdgeInsets(top: 11, leading: 17, bottom: 13, trailing: 102)
+        
+        button.configuration = configuration
         button.backgroundColor = .white
         button.layer.cornerRadius = 5
-        button.tintColor = .black
-        
         button.layer.borderWidth = 1  // 테두리 두께 설정
-        button.layer.borderColor = UIColor.black.cgColor  // 테두리 색상 설정
-        
+        button.layer.borderColor = UIColor.gray.cgColor  // 테두리 색상 설정
         
         return button
     }()
@@ -109,13 +118,12 @@ class LoginView: UIView {
         
         self.addSubview(socialLoginStackView)
         socialLoginStackView.addArrangedSubview(kakaoLoginButton)
-        socialLoginStackView.addArrangedSubview(kakaoLoginButton)
+        socialLoginStackView.addArrangedSubview(appleLoginButton)
     }
     
     private func constraints() {
         kreamImageView.snp.makeConstraints {
             $0.top.equalToSuperview().offset(126)
-//            $0.bottom.equalToSuperview().offset(-651) 필요 X
             $0.centerX.equalToSuperview()
             $0.width.equalTo(287)
             $0.height.equalTo(75)
