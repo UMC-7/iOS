@@ -150,8 +150,6 @@ class LoginView: UIView {
         pwdStackView.addArrangedSubview(pwdTextField)
         
         // 아이디 비번 그룹 스택뷰
-        
-        
         addSubview(headerLogoView)
         addSubview(loginBtn)
         addSubview(kakaoLoginBtn)

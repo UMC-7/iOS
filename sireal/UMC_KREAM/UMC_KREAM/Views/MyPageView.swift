@@ -61,6 +61,8 @@ class MyPageView: UIView {
         return button
     }()
     
+    
+    
     // MARK: - Initializer
     
     override init(frame: CGRect) {
@@ -73,7 +75,9 @@ class MyPageView: UIView {
     }
 
     // MARK: - Setup Layout
+    
     private func setupLayout() {
+        
         addSubview(profileImageView)
         addSubview(settingsButton)
         addSubview(cameraButton)
@@ -119,7 +123,7 @@ class MyPageView: UIView {
             make.height.equalTo(19)
         }
 
-        // 프로필 관리 버튼 레이아웃 (PDF 이미지)
+        // 프로필 관리 버튼 레이아웃
         manageProfileButton.snp.makeConstraints { make in
             make.top.equalTo(profileImageView.snp.bottom).offset(26)
             make.left.equalToSuperview().offset(32.5)
@@ -127,7 +131,7 @@ class MyPageView: UIView {
             make.height.equalTo(26)
         }
 
-        // 프로필 공유 버튼 레이아웃 (PDF 이미지)
+        // 프로필 공유 버튼 레이아웃
         shareProfileButton.snp.makeConstraints { make in
             make.top.equalTo(profileImageView.snp.bottom).offset(26)
             make.left.equalTo(manageProfileButton.snp.right).offset(14)

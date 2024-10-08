@@ -24,6 +24,7 @@ class MainTabBarController: UITabBarController {
         let shopVC = UIViewController()
         let savedVC = UIViewController()
         
+        
         // MyPageViewController는 UINavigationController로 감
         let mypageVC = MyPageViewController()
         let myPageNavController = UINavigationController(rootViewController: mypageVC)
@@ -38,11 +39,10 @@ class MainTabBarController: UITabBarController {
         myPageNavController.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "mypage"), selectedImage: UIImage(named: "mypageIcon_selected"))
         
 
-        
         viewControllers = [homeVC, styleVC, shopVC, savedVC, myPageNavController]
         
         tabBar.items?.forEach { item in
-                    item.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
+                    item.imageInsets = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
                 }
     }
         
