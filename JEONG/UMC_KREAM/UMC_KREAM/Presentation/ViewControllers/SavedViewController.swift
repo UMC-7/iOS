@@ -1,5 +1,5 @@
 //
-//  ShopViewController.swift
+//  SavedViewController.swift
 //  UMC_KREAM
 //
 //  Created by 정의찬 on 10/8/24.
@@ -7,7 +7,8 @@
 
 import UIKit
 
-class ShopViewController: UIViewController {
+/// Saved 뷰 컨트롤러
+class SavedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// KREAM 탭바컨트롤러
 class MainTabBarController: UITabBarController {
 
     override func viewDidLoad() {
@@ -16,7 +17,8 @@ class MainTabBarController: UITabBarController {
         appearance()
     }
     
-
+    
+    /// 탭바 설정 함수(피그마 디자인에 맞춰 5개 구성)
     private func setupTabBar() {
         
         let homeVC = UINavigationController(rootViewController: HomeViewController())
@@ -38,6 +40,7 @@ class MainTabBarController: UITabBarController {
         
     }
     
+    /// 클릭 시, 검은색으로 칠해지도록 Aprrearance 조정 함수
     private func appearance() {
         let barAppearance = UITabBarAppearance()
         barAppearance.stackedLayoutAppearance.selected.iconColor = UIColor.black

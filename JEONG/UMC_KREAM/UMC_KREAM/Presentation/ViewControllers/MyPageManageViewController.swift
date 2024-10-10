@@ -15,7 +15,8 @@ class MyPageManageViewController: UIViewController {
         self.view = ProfileManagerView()
         setNavigation()
     }
-
+    
+    /// 네비게이션 바의 상단 화면으로 나가는 버튼 + 네비게이션 타이틀 지정
     private func setNavigation() {
         self.navigationItem.title = "프로필 관리"
         
@@ -23,6 +24,7 @@ class MyPageManageViewController: UIViewController {
         navigationItem.leftBarButtonItem = backBtn
     }
     
+    /// 네비게이션 왼쪽 상단 버튼을 통해 이전 화면으로 돌아감
     @objc func didTap() {
         navigationController?.popViewController(animated: true)
     }

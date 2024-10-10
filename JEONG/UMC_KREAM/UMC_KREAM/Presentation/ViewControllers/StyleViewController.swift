@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  StyleViewController.swift
 //  UMC_KREAM
 //
 //  Created by 정의찬 on 10/8/24.
@@ -7,7 +7,8 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+/// 스타일 뷰 컨트롤러
+class StyleViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
