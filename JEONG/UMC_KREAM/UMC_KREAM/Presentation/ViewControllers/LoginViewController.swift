@@ -11,8 +11,9 @@ import UIKit
 class LoginViewController: UIViewController {
     
     /// 아이디, 비번 지정 변수
-    let userInfo: UserInfo = UserInfo(id: "umc", pwd: "1234")
-
+    let userInfo: UserInfo = UserInfo(id: "JeOng", pwd: "1234")
+    
+    /// 앱 실행 단계
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view = loginView

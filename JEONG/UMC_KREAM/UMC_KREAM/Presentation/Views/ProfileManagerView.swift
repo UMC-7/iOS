@@ -36,22 +36,22 @@ class ProfileManagerView: UIView {
     private lazy var title: UILabel = makeTitleLabel("프로필 정보", font: UIFont.systemFont(ofSize: 14, weight: .bold))
     
     /// 아이디 입력 타이틀 라벨
-    private lazy var idTitle: UILabel = makeTitleLabel("유저 이메일", font: UIFont.systemFont(ofSize: 14, weight: .regular))
+    public lazy var idTitle: UILabel = makeTitleLabel("유저 이메일", font: UIFont.systemFont(ofSize: 14, weight: .regular))
     
     /// 비밀번호 입력 타이틀 라벨
     private lazy var pwdTitle: UILabel = makeTitleLabel("유저 비밀번호", font: UIFont.systemFont(ofSize: 14, weight: .regular))
     
     /// 아이디 입력 텍스트 필드
-    public lazy var idTextField: UITextField = makeTextField("새로운 이메일을 입력해주세요!")
+    public lazy var idTextField: UITextField = makeTextField("새로운 이메일을 입력해주세요!", defaultValueKey: "userId")
     
     /// 비밀번호 입력 텍스트 필드
-    public lazy var pwdTextField: UITextField = makeTextField("새로운 비밀번호를 입력해주세요!")
+    public lazy var pwdTextField: UITextField = makeTextField("새로운 비밀번호를 입력해주세요!", defaultValueKey: "userPwd")
     
     /// 아이디 체크 버튼
-    public lazy var idCheckBtn: UIButton = makeCheckBtn()
+    public lazy var idCheckBtn: UIButton = makeCheckBtn(title: "변경")
     
     /// 비밀번호 체크 버튼
-    public lazy var pwdCheckBtn: UIButton = makeCheckBtn()
+    public lazy var pwdCheckBtn: UIButton = makeCheckBtn(title: "변경")
     
     // MARK: - Option
     
@@ -100,8 +100,9 @@ class ProfileManagerView: UIView {
     /// 텍스트 필드 생성
     /// - Parameter placeholder: 텍스트 필드 내부 placehodle 값 지정
     /// - Returns: 지정된 스타일의 UITextField 객체
-    private func makeTextField(_ placeholder: String) -> UITextField {
+    private func makeTextField(_ placeholder: String, defaultValueKey: String) -> UITextField {
         let textField = UITextField()
+        let defaultValue = UserDefaults.standard.string(forKey: defaultValueKey)
         
         textField.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: placeholderAttributes)
         textField.font = UIFont.systemFont(ofSize: 14, weight: .medium)
@@ -112,6 +113,9 @@ class ProfileManagerView: UIView {
         textField.layer.borderColor = UIColor.lightGray.cgColor
         textField.layer.borderWidth = 1
         textField.layer.cornerRadius = 8
+        
+        textField.text = defaultValue
+        textField.isUserInteractionEnabled = false
         return textField
     }
     
@@ -129,12 +133,13 @@ class ProfileManagerView: UIView {
         return stackView
     }
     
-    /// 중복되는 확인 버튼 생성
+    /// 변경 및 확인 버튼
+    /// - Parameter title: 버튼 내부 타이틀 지정
     /// - Returns: 지정된 스타일의 UIButton 객체
-    private func makeCheckBtn() -> UIButton {
+    private func makeCheckBtn(title: String) -> UIButton {
         let btn = UIButton()
-        btn.setTitle("확인", for: .normal)
-        btn.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        btn.setTitle("변경", for: .normal)
+        btn.titleLabel?.font = .systemFont(ofSize: 14, weight: .medium)
         btn.setTitleColor(UIColor.black, for: .normal)
         
         btn.clipsToBounds = true

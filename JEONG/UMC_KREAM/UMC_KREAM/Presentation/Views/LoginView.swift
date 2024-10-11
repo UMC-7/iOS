@@ -24,6 +24,7 @@ class LoginView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     // MARK: - Property
     
     /// 아이디 입력 타이틀 라벨
