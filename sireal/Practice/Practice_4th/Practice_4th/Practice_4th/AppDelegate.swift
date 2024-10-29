@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  UMC_KREAM
+//  Practice_4th
 //
-//  Created by 윤시진 on 9/30/24.
+//  Created by 윤시진 on 10/29/24.
 //
 
 import UIKit
@@ -10,12 +10,13 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
     }
 
-    
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
