@@ -9,10 +9,9 @@ import UIKit
 
 class HomeViewController: UIViewController, UISearchResultsUpdating, UICollectionViewDataSource, UICollectionViewDelegate {
 
-    private let homeView = HomeView()
-
-    // MenuModel을 사용하여 각 셀의 데이터를 정의
-    private let menuItems = [
+    private lazy var homeView = HomeView()
+    
+    private lazy var menuItems: [MenuModel] = [
         MenuModel(title: "크림 드로우", imageName: "drow"),
         MenuModel(title: "실시간 차트", imageName: "chart"),
         MenuModel(title: "남성 추천", imageName: "1_recommend"),
