@@ -12,12 +12,12 @@ class HomeTableViewCell: UITableViewCell {
 
     static let identifier = "HomeTableViewCell"
     
-    let collectionView: UICollectionView = {
+    private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.minimumInteritemSpacing = 10
         layout.minimumLineSpacing = 20
-        layout.sectionInset = UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 5)
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 5, bottom: 5, right: 15)
         layout.itemSize = CGSize(width: 60, height: 85)
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
