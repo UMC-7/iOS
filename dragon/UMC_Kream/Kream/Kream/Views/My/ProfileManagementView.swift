@@ -46,7 +46,7 @@ class ProfileManagementView: UIView {
     }()
     
     // 이메일 텍스트 필드
-    private lazy var emailTextField: UITextField = {
+    public lazy var emailTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "example@naver.com"
         textField.layer.borderWidth = 1
@@ -59,7 +59,7 @@ class ProfileManagementView: UIView {
     }()
     
     // 이메일 변경 버튼
-    private lazy var changeEmailButton: UIButton = {
+    public lazy var changeEmailButton: UIButton = {
         let button = UIButton()
         button.setTitle("변경", for: .normal)
         button.setTitleColor(.black, for: .normal)
@@ -96,7 +96,7 @@ class ProfileManagementView: UIView {
     }()
     
     // 비밀번호 텍스트 필드
-    private lazy var passwordTextField: UITextField = {
+    public lazy var passwordTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "***************"
         textField.layer.borderWidth = 1
@@ -109,7 +109,7 @@ class ProfileManagementView: UIView {
     }()
     
     // 비밀번호 변경 버튼
-    private lazy var changePasswordButton: UIButton = {
+    public lazy var changePasswordButton: UIButton = {
         let button = UIButton()
         button.setTitle("변경", for: .normal)
         button.setTitleColor(.black, for: .normal)

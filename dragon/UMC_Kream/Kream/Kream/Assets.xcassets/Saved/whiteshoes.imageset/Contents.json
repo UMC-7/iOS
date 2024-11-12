@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "whiteshoes.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

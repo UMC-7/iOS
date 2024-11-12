@@ -8,17 +8,17 @@
 import UIKit
 class MyPageViewController: UIViewController {
     // MyPageView 인스턴스 생성
-    private let myPageView = MyPageView()
+    private let myPageHeaderView = MyPageHeaderView()
     
     override func loadView() {
-        self.view = myPageView
+        self.view = myPageHeaderView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // 프로필 관리 버튼 누르면 관리 메뉴 이동
-        myPageView.profileManagingButton.addTarget(self, action: #selector(goToProfileManagement), for: .touchUpInside)
+        myPageHeaderView.profileManagingButton.addTarget(self, action: #selector(goToProfileManagement), for: .touchUpInside)
     }
     
     @objc private func goToProfileManagement() {

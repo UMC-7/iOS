@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D08247D62CE1EEFB00A1DCC6 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = D08247D52CE1EEFB00A1DCC6 /* Then */; };
 		D0F597F72CAB168D0038DD3F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D0F597F62CAB168D0038DD3F /* SnapKit */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0F597F72CAB168D0038DD3F /* SnapKit in Frameworks */,
+				D08247D62CE1EEFB00A1DCC6 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +86,7 @@
 			name = Kream;
 			packageProductDependencies = (
 				D0F597F62CAB168D0038DD3F /* SnapKit */,
+				D08247D52CE1EEFB00A1DCC6 /* Then */,
 			);
 			productName = Kream;
 			productReference = D0F597C22CAB0E6A0038DD3F /* Kream.app */;
@@ -115,6 +118,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				D0F597F52CAB168D0038DD3F /* XCRemoteSwiftPackageReference "SnapKit" */,
+				D08247D42CE1EEFB00A1DCC6 /* XCRemoteSwiftPackageReference "Then" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = D0F597C32CAB0E6A0038DD3F /* Products */;
@@ -344,6 +348,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		D08247D42CE1EEFB00A1DCC6 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		D0F597F52CAB168D0038DD3F /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -355,6 +367,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		D08247D52CE1EEFB00A1DCC6 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D08247D42CE1EEFB00A1DCC6 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
 		D0F597F62CAB168D0038DD3F /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D0F597F52CAB168D0038DD3F /* XCRemoteSwiftPackageReference "SnapKit" */;

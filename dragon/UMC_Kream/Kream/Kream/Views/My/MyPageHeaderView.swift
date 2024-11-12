@@ -1,13 +1,13 @@
 //
-//  MyPageView.swift
+//  MyPageHeaderView.swift
 //  Kream
 //
-//  Created by 권용빈 on 10/8/24.
+//  Created by 권용빈 on 11/6/24.
 //
 
 import UIKit
 
-class MyPageView: UIView {
+class MyPageHeaderView: UIView {
     
     //MARK: - 초기화 구문
     override init(frame: CGRect){
