@@ -11,26 +11,41 @@ import SnapKit
 class HomeView: UIView {
 
     // MARK: - UI Components
-    let searchBar = UISearchBar()
-    let segmentedControl = UISegmentedControl(items: ["추천", "랭킹", "발매정보", "럭셔리", "남성", "여성"])
-    let underlineView = UIView()
-    let adImageView = UIImageView(image: UIImage(named: "image_ad"))
-    let emptyView = UIView()
+    private lazy var searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.placeholder = "브랜드, 상품, 프로필, 태그 등"
+        searchBar.searchBarStyle = .minimal
+        return searchBar
+    }()
     
-    let collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        layout.minimumInteritemSpacing = 10
-        layout.minimumLineSpacing = 20
-        layout.sectionInset = UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 5)
-        layout.itemSize = CGSize(width: 60, height: 85) // 이미지와 텍스트를 포함한 셀 크기 설정
-
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .clear
-        collectionView.showsHorizontalScrollIndicator = false
-        collectionView.isScrollEnabled = false // 스크롤 비활성화
-        collectionView.register(MenuCollectionViewCell.self, forCellWithReuseIdentifier: MenuCollectionViewCell.identifier)
-        return collectionView
+    private lazy var segmentedControl: UISegmentedControl = {
+        let control = UISegmentedControl(items: ["추천", "랭킹", "발매정보", "럭셔리", "남성", "여성"])
+        return control
+    }()
+    
+    private lazy var underlineView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .black
+        return view
+    }()
+    
+    private lazy var adImageView: UIImageView = {
+        let imageView = UIImageView(image: UIImage(named: "image_ad"))
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        return imageView
+    }()
+    
+    private lazy var emptyView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.isHidden = true
+        return view
+    }()
+    
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        return tableView
     }()
 
     // MARK: - Initialization
