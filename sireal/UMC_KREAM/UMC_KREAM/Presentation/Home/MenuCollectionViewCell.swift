@@ -12,8 +12,21 @@ class MenuCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "MenuCollectionViewCell"
     
-    private let imageView = UIImageView()
-    private let titleLabel = UILabel()
+    private lazy var imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true // 이미지가 잘리도록 설정
+        imageView.layer.cornerRadius = 35 // 이미지가 동그랗게 되도록 설정
+        return imageView
+    }()
+    
+    private lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 11.5)
+        label.textAlignment = .center
+        label.textColor = .black
+        return label
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
