@@ -13,7 +13,7 @@ class HomeViewCollectionViewCell: UICollectionViewCell {
     
     let imageView = UIImageView().then{
         $0.contentMode = .scaleAspectFill
-        $0.layer.cornerRadius = 50
+        $0.layer.cornerRadius = $0.frame.size.width / 2
         $0.clipsToBounds = true
     }
     
@@ -39,11 +39,15 @@ class HomeViewCollectionViewCell: UICollectionViewCell {
         
         imageView.snp.makeConstraints {
             $0.top.equalToSuperview().offset(10)
+            $0.centerX.equalToSuperview()
             $0.height.width.equalTo(61)
         }
         
         titleLabel.snp.makeConstraints {
             $0.top.equalTo(imageView.snp.bottom).offset(6)
+            $0.leading.trailing.equalToSuperview().inset(4)
+            //$0.bottom.lessThanOrEqualToSuperview()
+            $0.height.equalTo(14)
         }
     }
 }
