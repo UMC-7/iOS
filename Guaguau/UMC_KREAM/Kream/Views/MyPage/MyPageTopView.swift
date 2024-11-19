@@ -76,9 +76,10 @@ class MyPageTopView: UIView {
         
         stackView.axis = .horizontal
         stackView.spacing = 8
-        stackView.distribution = .fillEqually
+        stackView.distribution = .equalSpacing
         stackView.alignment = .center
-        
+        //stackView.layer.borderColor = UIColor.black.cgColor
+        //stackView.layer.borderWidth = 1
         return stackView
     }()
     
@@ -171,14 +172,14 @@ class MyPageTopView: UIView {
             
             $0.left.equalToSuperview().offset(138.5)
             $0.right.equalToSuperview().offset(-139.5)
-            $0.width.equalTo(115)
+            $0.width.greaterThanOrEqualTo(115)
         }
         
         userFollower.snp.makeConstraints{
-            $0.width.equalTo(57)
+            $0.width.lessThanOrEqualTo(150)
         }
         userFollowing.snp.makeConstraints{
-            $0.width.equalTo(57)
+            $0.width.lessThanOrEqualTo(150)
         }
         
         

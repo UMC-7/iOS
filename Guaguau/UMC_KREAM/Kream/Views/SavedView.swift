@@ -9,31 +9,79 @@ import UIKit
 
 class SavedView: UIView {
 
-    private lazy var title: UILabel = {
-        let label = UILabel()
-        label.text = "Saved"
-        label.font = UIFont.systemFont(ofSize: 28, weight: .bold)
-        label.textColor = UIColor.black
-        
-        return label
-    }()
+    let productCount: Int
 
-    private lazy var totalNumber: UILabel = {
-        let label = UILabel()
+    
+    //초기화
+    init(frame: CGRect = .zero, productCount: Int) {
+        self.productCount = productCount
+        super.init(frame: frame)
+        addComponents()
+        constraints()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    
+    //property
+    private lazy var title: UILabel = makeLabel("SAVED", font: .systemFont(ofSize: 28 , weight: .bold))
+
+    private lazy var totalNumber: UILabel = makeLabel("전체 \(productCount)개", font: .systemFont(ofSize: 14, weight: .regular))
+    
+    public lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.register(SavedCell.self, forCellReuseIdentifier: SavedCell.identifier)
+        tableView.separatorStyle = .singleLine
         
-        label.text = "전체 10개"
-        label.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+        return tableView
+    }()
+    
+    
+    
+    
+    //함수
+    //라벨함수
+    private func makeLabel(_ text: String, font: UIFont) -> UILabel{
+        let label = UILabel()
+        label.text = text
+        label.font = font
         label.textColor = UIColor.black
         
         return label
-    }()
+    }
     
-    public lazy var savedView: UITableView = {
-        let table = UITableView()
-        table.register(SavedCell.self, forCellReuseIdentifier: SavedCell.identifier)
-        table.separatorStyle = .singleLine
-        return table
-    }()
     
+    
+    //오토레이아웃
+    private func addComponents() {
+        self.addSubview(title)
+        self.addSubview(totalNumber)
+        self.addSubview(tableView)
+    }
+    
+    private func constraints() {
+        title.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(61)
+            $0.left.equalToSuperview().offset(10)
+            $0.width.greaterThanOrEqualTo(81)
+            $0.height.equalTo(45)
+        }
+        
+        totalNumber.snp.makeConstraints {
+            $0.top.equalTo(title.snp.bottom).offset(16)
+            $0.left.equalToSuperview().offset(10)
+            $0.width.greaterThanOrEqualTo(55)
+            $0.height.equalTo(22)
+        }
+        
+        tableView.snp.makeConstraints {
+            $0.top.equalTo(totalNumber.snp.bottom).offset(12)
+            $0.left.right.equalToSuperview()
+            $0.bottom.equalTo(self.safeAreaLayoutGuide)
+        }
+    }
     
 }
