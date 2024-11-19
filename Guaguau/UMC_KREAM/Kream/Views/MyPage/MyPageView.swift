@@ -58,7 +58,7 @@ class MyPageView: UIView {
         
         bottomView.snp.makeConstraints{
             $0.left.right.bottom.equalToSuperview()
-            $0.height.equalTo(531)
+            $0.height.equalTo(460)
         }
     }
     

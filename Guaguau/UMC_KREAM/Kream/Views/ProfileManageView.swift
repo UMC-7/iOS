@@ -25,14 +25,14 @@ class ProfileManageView: UIView {
     
     
     //MARK: Property
-    //뒤로가기버튼
-    private lazy var backButton: UIButton = {
-        let button = UIButton()
-        
-        button.setImage(UIImage(named: "Back"), for: .normal)
-        
-        return button
-    }()
+//    //뒤로가기버튼
+//    private lazy var backButton: UIButton = {
+//        let button = UIButton()
+//        
+//        button.setImage(UIImage(named: "Back"), for: .normal)
+//        
+//        return button
+//    }()
     
     
     //프로필 관리 라벨
@@ -63,22 +63,22 @@ class ProfileManageView: UIView {
     
     
     //이메일 입력 텍스트필드
-    private lazy var emailTextField = makeTextField(text: "새로운 이메일을 입력해주세요!")
+    public lazy var emailTextField = makeTextField(text: "새로운 이메일을 입력해주세요!")
     
     //비밀번호 입력 텍스트필드
-    private lazy var pwTextField = makeTextField(text: "새로운 비밀번호를 입력해주세요!")
+    public lazy var pwTextField = makeTextField(text: "새로운 비밀번호를 입력해주세요!")
     
     
     //이메일 변경버튼
-    private lazy var emailChangeButton = makeButton(title: "변경")
+    public lazy var emailChangeButton = makeButton(title: "변경")
     
     //비밀번호 변경버튼
-    private lazy var pwChangeButton = makeButton(title: "변경")
+    public lazy var pwChangeButton = makeButton(title: "변경")
     
     
     //MARK: 오토레이아웃 설정
     private func addComponents(){
-        addSubview(backButton)
+        //addSubview(backButton)
         addSubview(profileManageLabel)
         addSubview(profileImage)
         addSubview(profileInfoLabel)
@@ -91,16 +91,17 @@ class ProfileManageView: UIView {
     }
     
     private func constraints(){
-        backButton.snp.makeConstraints{
-            $0.top.equalToSuperview().offset(67)
-            $0.left.equalToSuperview().offset(27)
-            $0.width.equalTo(25)
-            $0.height.equalTo(25)
-        }
+//        backButton.snp.makeConstraints{
+//            $0.top.equalToSuperview().offset(67)
+//            $0.left.equalToSuperview().offset(27)
+//            $0.width.equalTo(25)
+//            $0.height.equalTo(25)
+//        }
         
         profileManageLabel.snp.makeConstraints{
             $0.top.equalToSuperview().offset(67)
-            $0.left.equalTo(backButton.snp.right).offset(112)
+            //$0.left.equalTo(backButton.snp.right).offset(112)
+            $0.left.equalToSuperview().offset(164)
             $0.width.equalTo(74)
             $0.height.equalTo(26)
         }
