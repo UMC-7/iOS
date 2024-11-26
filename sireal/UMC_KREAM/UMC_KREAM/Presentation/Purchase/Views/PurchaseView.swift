@@ -91,7 +91,7 @@ class PurchaseView: UIView {
         return view
     }()
     
-    // MARK: - Helper Functions
+    // MARK: - Functions
     
     private func makeLabel(_ text: String, _ font: UIFont, color: UIColor) -> UILabel {
         let label = UILabel()

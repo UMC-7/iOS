@@ -52,7 +52,6 @@ class SizeCell: UICollectionViewCell {
         }
     }
     
-    // MARK: - Helpers
     
     private func createLabel(fontSize: CGFloat, color: UIColor) -> UILabel {
         let label = UILabel()
@@ -62,7 +61,6 @@ class SizeCell: UICollectionViewCell {
         return label
     }
     
-    // MARK: - Configuration
     
     func configure(with model: SizeModel) {
         sizeLabel.text = model.size
