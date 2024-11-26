@@ -6,15 +6,21 @@
 //
 
 import UIKit
+import KakaoSDKCommon
+import KakaoSDKAuth
+import KakaoSDKUser
 
 class LoginViewController: UIViewController {
     
     let userInfo: UserInfo = UserInfo(id: "sireal", pwd: "1017")
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view = loginView
+        
+        // UserDefaults 초기화 (테스트 용도)
+        UserDefaults.standard.removeObject(forKey: "userId")
+        UserDefaults.standard.removeObject(forKey: "userPwd")
     }
     
     // MARK: - Property
@@ -23,6 +29,7 @@ class LoginViewController: UIViewController {
     private lazy var loginView: LoginView = {
         let view = LoginView()
         view.loginBtn.addTarget(self, action: #selector(loginFunction), for: .touchUpInside)
+        view.kakaoBtn.addTarget(self, action: #selector(handleKakaoLogin), for: .touchUpInside) // 카카오 로그인 버튼 액션 추가
         return view
     }()
     
@@ -52,6 +59,8 @@ class LoginViewController: UIViewController {
         }
     }
     
+    
+    
     /// 로그인 뷰 -> TabBarController 루트 뷰 전환 함수
     private func changeRootView() {
         let rootVC = MainTabBarController()
@@ -61,4 +70,39 @@ class LoginViewController: UIViewController {
             UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: nil, completion: nil)
         }
     }
+    
+    // 카카오 로그인
+    @objc private func handleKakaoLogin() {
+        if UserApi.isKakaoTalkLoginAvailable() {
+            // 카카오톡으로 로그인
+            UserApi.shared.loginWithKakaoTalk { (oauthToken, error) in
+                if let error = error {
+                    print("카카오톡 로그인 실패: \(error.localizedDescription)")
+                } else {
+                    print("카카오톡 로그인 성공: \(oauthToken?.accessToken ?? "")")
+                    self.navigateToMainTab() // 로그인 성공 시 메인 화면으로 전환
+                }
+            }
+        } else {
+            // 카카오톡 미설치 시, 카카오 계정 로그인으로 대체
+            UserApi.shared.loginWithKakaoAccount { (oauthToken, error) in
+                if let error = error {
+                    print("카카오 계정 로그인 실패: \(error.localizedDescription)")
+                } else {
+                    print("카카오 계정 로그인 성공: \(oauthToken?.accessToken ?? "")")
+                    self.navigateToMainTab() // 로그인 성공 시 메인 화면으로 전환
+                }
+            }
+        }
+    }
+    
+    private func navigateToMainTab() {
+        let tabBarController = MainTabBarController()
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let window = windowScene.windows.first {
+            window.rootViewController = tabBarController
+            UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: nil, completion: nil)
+        }
+    }
+    
 }

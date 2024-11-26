@@ -1,0 +1,11 @@
+//
+//  Config.xcconfig
+//  UMC_KREAM
+//
+//  Created by 윤시진 on 11/26/24.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+NATIVE_APP_KEY = 931eac38fc8c135550ac26f5a513d6d7
