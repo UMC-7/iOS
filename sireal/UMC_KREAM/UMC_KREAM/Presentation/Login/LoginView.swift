@@ -41,7 +41,7 @@ class LoginView: UIView {
         return view
     }()
     
-    /// 로그인 버튼(아이디 및 비밀번호 입력 할 경우)
+    /// 로그인 버튼
     public lazy var loginBtn: UIButton = {
         let btn = UIButton()
         btn.setTitle("로그인", for: .normal)
@@ -54,7 +54,7 @@ class LoginView: UIView {
     }()
     
     /// 카카오 로그인 버튼
-    private lazy var kakaoBtn: UIButton = makeSocialBtn(image: "kakao.pdf", title: "카카오로 로그인")
+    lazy var kakaoBtn: UIButton = makeSocialBtn(image: "kakao.pdf", title: "카카오로 로그인")
     
     /// 애플 로그인 버튼
     private lazy var appleBtn: UIButton = makeSocialBtn(image: "apple.pdf", title: "Apple로 로그인")
@@ -94,9 +94,7 @@ class LoginView: UIView {
     
     // MARK: - MakeFunction
     
-    /// 아이디 및 비밀번호 중복되는 타이틀 UILabel 생성
-    /// - Parameter text: 타이틀로 사용할 텍스트
-    /// - Returns: 설정된 스타일의 UILabel 객체
+
     private func makeTitleTextLabel(_ text: String) -> UILabel {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
@@ -105,9 +103,7 @@ class LoginView: UIView {
         return label
     }
     
-    /// 아이디 및 비밀번호 입력 텍스트 입력 UITextField 생성
-    /// - Parameter placeholder: 텍스트 필드 내부에 사용할 placeholder 지정
-    /// - Returns: 설정된 스타일의 UITextField 객체
+
     private func makeTextField(_ placeholder: String) -> UITextField {
         let field = UITextField()
         
@@ -123,11 +119,7 @@ class LoginView: UIView {
         return field
     }
     
-    /// 중복 되는 소셜 버튼 UIButton 샐서
-    /// - Parameters: 버튼 속 사용하게 되는 소셜 로고 이미지 + 버튼 타이틀
-    ///   - image: 로고 이미지 이름 String 값
-    ///   - title: 버튼 타이틀 String 값
-    /// - Returns: 설정된 스타일의 UIButton 객체
+
     private func makeSocialBtn(image: String, title: String) -> UIButton {
         let btn = UIButton()
         var configuration = UIButton.Configuration.plain()
@@ -149,8 +141,6 @@ class LoginView: UIView {
     }
     
     /// 중복되는 스택뷰 생성
-    /// - Parameter spacing: 스택 내부 간격 조정
-    /// - Returns: Vertical 스택 뷰 반환
     private func makeStackView(spacing: CGFloat) -> UIStackView {
         let stackView = UIStackView()
         stackView.axis = .vertical

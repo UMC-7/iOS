@@ -2,7 +2,7 @@
 //  SavedViewController.swift
 //  UMC_KREAM
 //
-//  Created by 윤시진 on 11/7/24.
+//  Created by UMC 7기 중앙 iOS 파트장 정의찬/제옹 on 10/8/24.
 //
 
 import UIKit
@@ -25,6 +25,9 @@ class SavedViewController: UIViewController {
     }()
 }
 
+//MARK: - Extension
+
+/* 테이블 뷰 내부 속성 조정 */
 extension SavedViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -41,5 +44,9 @@ extension SavedViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+
     
 }
